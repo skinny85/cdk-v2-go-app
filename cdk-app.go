@@ -26,7 +26,7 @@ func NewCdkV1GoSampleAppStack(scope constructs.Construct, id string, props *CdkV
 	topic := awssns.NewTopic(stack, jsii.String("MyTopic"), &awssns.TopicProps{
 		DisplayName: jsii.String("MyCoolTopic"),
 	})
-	topic.AddSubscription(awssnssubscriptions.NewSqsSubscription(queue, &awssnssubscriptions.SqsSubscriptionProps{}))
+	topic.AddSubscription(awssnssubscriptions.NewSqsSubscription(queue, nil))
 
 	return stack
 }
